@@ -1,0 +1,13 @@
+{
+  "first-name": "Ferre",
+  "last-name": "Laridon",
+  "github-url": "https://github.com/ucll-vgo2122/minesweeper-Ferre-Laridon",
+  "framework": "WPF",
+  "extensions": [
+    "Different font color depending on amount of neighboring mines",
+    "Timer",
+    "Improved visualization of squares",
+    "Custom mine probability",
+    "Quickstart (preset board sizes, such as Easy (5×5), Medium (10×10), …​)"
+  ]
+}

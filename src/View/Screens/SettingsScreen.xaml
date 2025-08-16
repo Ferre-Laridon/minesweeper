@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="View.Screens.SettingsScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:View.Screens"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <StackPanel Margin="10" VerticalAlignment="Center" MaxWidth="750">
+        
+        <DockPanel VerticalAlignment="Center" Margin="10">
+            <Label 
+                Width="100"
+                DockPanel.Dock="Left"
+                HorizontalContentAlignment="Right">
+                Board Size
+            </Label>
+            <TextBox 
+                Text="{Binding 
+                    ElementName=BoardSize,
+                    Path=Value, 
+                    UpdateSourceTrigger=PropertyChanged}" 
+                DockPanel.Dock="Right"
+                TextAlignment="Right"
+                Width="40"/>
+            <Slider 
+                Name="BoardSize"
+                MaxWidth="575"
+                Minimum="{Binding MinimumBoardSize}"
+                Maximum="{Binding MaximumBoardSize}"
+                Value="{Binding BoardSize}" 
+                TickFrequency="1"
+                IsSnapToTickEnabled="True"
+                TickPlacement="BottomRight"/>
+        </DockPanel>
+
+        <DockPanel VerticalAlignment="Center" Margin="10">
+            <Label 
+                DockPanel.Dock="Left"
+                Width="100"
+                HorizontalContentAlignment="Right">
+                Mine Probability
+            </Label>
+            <TextBox 
+                Text="{Binding 
+                    ElementName=MineProbability,
+                    Path=Value, 
+                    UpdateSourceTrigger=PropertyChanged}" 
+                DockPanel.Dock="Right"
+                TextAlignment="Right"
+                Width="40"/>
+            <Slider 
+                Name="MineProbability"
+                MaxWidth="575"
+                Minimum="{Binding MinimumMineProbability}"
+                Maximum="{Binding MaximumMineProbability}"
+                Value="{Binding MineProbability}" 
+                TickFrequency="0.05"
+                IsSnapToTickEnabled="True"
+                TickPlacement="BottomRight"/>
+        </DockPanel>
+
+        <DockPanel VerticalAlignment="Center" Margin="10">
+            <Label DockPanel.Dock="Left">Flooding</Label>
+            <CheckBox 
+                Name="flooding"
+                IsChecked="{Binding Flooding}"
+                DockPanel.Dock="Right"/>
+        </DockPanel>
+
+        <Button DockPanel.Dock="Top" Content="Play" Command="{Binding SwitchToGameScreen}" Height="30" Width="100"/>
+
+    </StackPanel>
+</UserControl>
